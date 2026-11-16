@@ -1,0 +1,6 @@
+{
+  "name": "Al-Bayan Quran",
+  "description": "Interactive Holy Quran with synchronized word-by-word highlighting using Sheikh Fares Abbad recitation, Urdu & English translations, Tajweed learning mode, and offline PWA support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

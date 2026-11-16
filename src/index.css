@@ -1,0 +1,218 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Jameel Noori Nastaleeq";
+  src:
+    local("Jameel Noori Nastaleeq Regular"),
+    local("Jameel Noori Nastaleeq"),
+    url("/fonts/JameelNooriNastaleeqRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-canvas: #fbfbf8;
+  --bg-surface: #ffffff;
+  --bg-surface-muted: #f2f5f2;
+  --border-hairline: #e2e8e2;
+  --text-primary: #12221a;
+  --text-secondary: #4a5e54;
+  --text-muted: #6c7d74;
+  --accent-emerald: #0f5132;
+  --accent-emerald-hover: #0b3b24;
+  --accent-gold: #b8860b;
+  --accent-gold-soft: #fef9e7;
+}
+
+.dark {
+  --bg-canvas: #09130f;
+  --bg-surface: #101f19;
+  --bg-surface-muted: #162921;
+  --border-hairline: #213a2f;
+  --text-primary: #eef4f0;
+  --text-secondary: #b7c9bf;
+  --text-muted: #849b8f;
+  --accent-emerald: #10b981;
+  --accent-emerald-hover: #059669;
+  --accent-gold: #e2b94b;
+  --accent-gold-soft: #261f0d;
+}
+
+.sepia {
+  --bg-canvas: #f4ecd8;
+  --bg-surface: #faf4e6;
+  --bg-surface-muted: #ebe0c7;
+  --border-hairline: #dcd0b4;
+  --text-primary: #2d2418;
+  --text-secondary: #584a36;
+  --text-muted: #786750;
+  --accent-emerald: #1b5e3a;
+  --accent-emerald-hover: #14472c;
+  --accent-gold: #9a6e08;
+  --accent-gold-soft: #efe3c2;
+}
+
+@layer base {
+  html {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    min-height: 100dvh;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-display {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.font-quran {
+  font-family: "Scheherazade New", "Amiri", "Noto Naskh Arabic", serif;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  word-spacing: 0.08em;
+}
+
+.font-urdu {
+  font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", "Noto Naskh Arabic", serif;
+  font-weight: 400;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  line-height: 2.35;
+  letter-spacing: 0;
+  word-spacing: 0.05em;
+}
+
+.font-mono-tabular {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tajweed verified rule styling (Quran.com text_uthmani_tajweed classes) */
+.tajweed-text tajweed {
+  transition: opacity 150ms ease, background-color 150ms ease;
+  border-radius: 3px;
+}
+
+/* Ikhfa (Concealment) - Warm Crimson / Rose */
+.tajweed-text tajweed.ikhafa,
+.tajweed-text tajweed.ikhafa_shafawi {
+  color: #b91c1c;
+}
+.dark .tajweed-text tajweed.ikhafa,
+.dark .tajweed-text tajweed.ikhafa_shafawi {
+  color: #f87171;
+}
+
+/* Idgham (Merging) - Emerald / Teal */
+.tajweed-text tajweed.idgham_ghunnah,
+.tajweed-text tajweed.idgham_wo_ghunnah,
+.tajweed-text tajweed.idgham_shafawi,
+.tajweed-text tajweed.idgham_mutajanisayn,
+.tajweed-text tajweed.idgham_mutaqaribayn {
+  color: #047857;
+}
+.dark .tajweed-text tajweed.idgham_ghunnah,
+.dark .tajweed-text tajweed.idgham_wo_ghunnah,
+.dark .tajweed-text tajweed.idgham_shafawi,
+.dark .tajweed-text tajweed.idgham_mutajanisayn,
+.dark .tajweed-text tajweed.idgham_mutaqaribayn {
+  color: #34d399;
+}
+
+/* Iqlab (Conversion) - Royal Indigo / Blue */
+.tajweed-text tajweed.iqlab {
+  color: #1d4ed8;
+}
+.dark .tajweed-text tajweed.iqlab {
+  color: #60a5fa;
+}
+
+/* Ghunnah (Nasalization) - Amber / Burnt Gold */
+.tajweed-text tajweed.ghunnah {
+  color: #b45309;
+}
+.dark .tajweed-text tajweed.ghunnah {
+  color: #fbbf24;
+}
+
+/* Qalqalah (Echoing bounce) - Deep Cyan / Sky */
+.tajweed-text tajweed.qalaqah {
+  color: #0369a1;
+}
+.dark .tajweed-text tajweed.qalaqah {
+  color: #38bdf8;
+}
+
+/* Madd (Elongation) - Plum / Violet */
+.tajweed-text tajweed.madda_normal,
+.tajweed-text tajweed.madda_permissible,
+.tajweed-text tajweed.madda_necessary,
+.tajweed-text tajweed.madda_obligatory {
+  color: #7e22ce;
+}
+.dark .tajweed-text tajweed.madda_normal,
+.dark .tajweed-text tajweed.madda_permissible,
+.dark .tajweed-text tajweed.madda_necessary,
+.dark .tajweed-text tajweed.madda_obligatory {
+  color: #c084fc;
+}
+
+/* Silent / Hamzatul Wasl / Laam Shamsiyah - Muted Slate */
+.tajweed-text tajweed.ham_wasl,
+.tajweed-text tajweed.laam_shamsiyah,
+.tajweed-text tajweed.slnt {
+  color: #64748b;
+}
+.dark .tajweed-text tajweed.ham_wasl,
+.dark .tajweed-text tajweed.laam_shamsiyah,
+.dark .tajweed-text tajweed.slnt {
+  color: #94a3b8;
+}
+
+.tajweed-text .end {
+  color: var(--accent-gold);
+  font-size: 0.78em;
+  margin-inline: 0.25rem;
+}
+
+/* Rule isolation highlight in Tajweed Learning Mode */
+.tajweed-filter-active tajweed {
+  opacity: 0.28;
+}
+.tajweed-filter-active[data-rule="ikhfa"] tajweed.ikhafa,
+.tajweed-filter-active[data-rule="ikhfa"] tajweed.ikhafa_shafawi,
+.tajweed-filter-active[data-rule="idgham"] tajweed.idgham_ghunnah,
+.tajweed-filter-active[data-rule="idgham"] tajweed.idgham_wo_ghunnah,
+.tajweed-filter-active[data-rule="idgham"] tajweed.idgham_shafawi,
+.tajweed-filter-active[data-rule="idgham"] tajweed.idgham_mutajanisayn,
+.tajweed-filter-active[data-rule="idgham"] tajweed.idgham_mutaqaribayn,
+.tajweed-filter-active[data-rule="iqlab"] tajweed.iqlab,
+.tajweed-filter-active[data-rule="ghunnah"] tajweed.ghunnah,
+.tajweed-filter-active[data-rule="qalqalah"] tajweed.qalaqah,
+.tajweed-filter-active[data-rule="madd"] tajweed.madda_normal,
+.tajweed-filter-active[data-rule="madd"] tajweed.madda_permissible,
+.tajweed-filter-active[data-rule="madd"] tajweed.madda_necessary,
+.tajweed-filter-active[data-rule="madd"] tajweed.madda_obligatory,
+.tajweed-filter-active[data-rule="silent"] tajweed.ham_wasl,
+.tajweed-filter-active[data-rule="silent"] tajweed.laam_shamsiyah,
+.tajweed-filter-active[data-rule="silent"] tajweed.slnt {
+  opacity: 1;
+  background-color: rgba(212, 175, 55, 0.18);
+  padding-inline: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
