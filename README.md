@@ -26,3 +26,4 @@ npm run dev       # Starts Vite dev server on port 3000 with PWA service worker 
 npm run lint      # Runs TypeScript type-checking (tsc --noEmit)
 npm run build     # Builds production static bundle + Workbox service worker into dist/
 ```
+
